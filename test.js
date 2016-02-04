@@ -1,4 +1,5 @@
 var prompt = require('prompt');
+var chalk = require('chalk');
 
 var schema = {
 	properties: {
@@ -17,6 +18,6 @@ prompt.start();
 
 prompt.get(schema, function(err, result) {
 	console.log('Command-line input received:');
-	console.log('	name:', result.name);
-	console.log('	password:', result.password);
+	console.log(chalk.bold('	name:'), chalk.cyan(result.name));
+	console.log(chalk.bold('	password:'), chalk.red(result.password));
 });
